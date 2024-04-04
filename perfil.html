@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Mi pagina de prueba</title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+  <header>
+    <h1>Mi perfil</h1>
+  </header>
+
+  <section>
+    <h2>Sobre mi</h2>
+    <p>Soy Paolo Ranieri, estudiante del IUTA. Tengo 20 años y estoy por graduarme. Quiero especializarme en ciberseguridad.</p>
+  </section>
+
+  <section>
+    <h2>Experiencia</h2>
+    <p>He trabajado desde joven. Mi empleo actual es en Inter como agente de ventas. En un futuro cercano, espero trabajar como ciberanalista.</p>
+  </section>
+
+  <section>
+    <h2>Educacion</h2>
+    <p>Estudié en el colegio Luces y Virtudes toda mi vida. Luego hice varios cursos de inglés y ahora estoy estudiando en el IUTA.</p>
+  </section>
+
+  <!-- Formulario de contacto -->
+  <section>
+    <h2>Formulario de contacto</h2>
+    <form id="contact-form">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      
+      <input type="submit" value="Enviar">
+    </form>
+    <div id="response-message"></div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // Obtener el formulario y agregar un controlador de eventos para el evento de envío
+    var form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Evitar el envío del formulario por defecto
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+      sendForm(name, email, message);
+    });
+
+    function sendForm(name, email, message) {
+      // Datos a enviar
+      var data = {
+        name: name,
+        email: email,
+        message: message
+      };
+
+      // URL de destino
+      var url = 'https://www.google.com/';
+
+      // Realizar la solicitud HTTP POST utilizando Axios
+      axios.post(url, data)
+        .then(function(response) {
+          // La solicitud se completó con éxito
+          console.log('La solicitud se envió correctamente:', response.data);
+          document.getElementById('response-message').textContent = '¡Formulario enviado!';
+        })
+        .catch(function(error) {
+          // Ocurrió un error al enviar la solicitud
+          console.error('Error al enviar la solicitud:', error);
+          document.getElementById('response-message').textContent = 'Error al enviar el formulario.';
+        });
+    }
+  </script>
+  </body>
+  </html>

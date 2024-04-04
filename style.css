@@ -1,0 +1,112 @@
+body {
+    background-color: #240b0b;
+    color: #fff; /* Color de texto blanco para mayor contraste */
+  }
+  
+  h1 {
+    color: #ffcc00; /* Amarillo */
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  h1{
+    display: block;
+    text-align: center;
+  }
+  
+  /* Estilos para las secciones */
+  section {
+    background-color: #bd3333;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #fff; /* Color de texto blanco para mayor contraste */
+  }
+  
+  /* Estilos para los párrafos */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos generales para todos los tamaños de pantalla */
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 767px) {
+    /* Estilos específicos para dispositivos móviles */
+    h1 {
+      font-size: 20px;
+    }
+    
+    section {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      font-size: 14px;
+    }
+  }
+  
+  /* Estilos para tabletas */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Estilos específicos para tabletas */
+    h1 {
+      font-size: 22px;
+    }
+    
+    section {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    
+    p {
+      font-size: 15px;
+    }
+  }
+  
+  /* Estilos para computadoras de escritorio */
+  @media (min-width: 1024px) {
+    /* Estilos específicos para computadoras de escritorio */
+    h1 {
+      font-size: 24px;
+    }
+    
+    section {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+  }
+  <style>
+    /* Estilos CSS para el formulario */
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    label, input, textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .success-message {
+      color: green;
+      margin-top: 10px;
+    }
+    
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
